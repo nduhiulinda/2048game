@@ -46,6 +46,7 @@ void process_cmd(char c){
     switch(c){
         case 'w':
             printf("%s\n", "UP");
+            rotate_left();
             break;
         
         case 'a':
@@ -64,6 +65,17 @@ void process_cmd(char c){
             printf("%s\n", "QUIT");
             break;
         
+    }
+}
+
+void rotate_left(){
+    int copy[N][N] = {0};
+    memcpy(&copy, &grid, sizeof(grid));
+
+    for (int i= 0; i<N; i++){
+        for (int j = 0; j<N; j++){
+            grid[N-j-1][i] = copy[i][j];
+        }
     }
 }
 
