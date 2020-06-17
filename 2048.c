@@ -41,7 +41,7 @@ void welcome(){
 
 }
 
-void process_cmd(c){
+void process_cmd(char c){
     getchar();
     switch(c){
         case 'w':
