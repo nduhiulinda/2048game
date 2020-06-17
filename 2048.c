@@ -6,6 +6,7 @@
 
 int grid[N][N] = {0};
 void rotate_left();
+void rotate_right();
 
 void place_nums(){
     int i = rand()%N;
@@ -48,6 +49,8 @@ void process_cmd(char c){
         case 'w':
             printf("%s\n", "UP");
             rotate_left();
+            print_grid();
+            rotate_right();
             break;
         
         case 'a':
@@ -76,6 +79,17 @@ void rotate_left(){
     for (int i= 0; i<N; i++){
         for (int j = 0; j<N; j++){
             grid[N-j-1][i] = copy[i][j];
+        }
+    }
+}
+
+void rotate_right(){
+    int copy[N][N] = {0};
+    memcpy(&copy, &grid, sizeof(grid));
+
+    for (int i= 0; i<N; i++){
+        for (int j = 0; j<N; j++){
+            grid[j][N-i-1] = copy[i][j];
         }
     }
 }
