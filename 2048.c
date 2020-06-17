@@ -5,6 +5,7 @@
 
 
 int grid[N][N] = {0};
+void rotate_left();
 
 void place_nums(){
     int i = rand()%N;
