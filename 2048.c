@@ -31,7 +31,18 @@ void print_grid(){
     }
 }
 
+void welcome(){
+    printf("%s\n", "Welcome to 2048. Use the following input keys:");
+    printf("%*s\n", 5, "Up = \'w\' ");
+    printf("%*s\n", 5, "Left = \'a\' ");
+    printf("%*s\n", 5, "Down = \'s\' ");
+    printf("%*s\n", 5, "Right = \'d\' ");
+    printf("%*s\n", 5, "Quit = \'q\' ");
+
+}
+
 int main(){
+    welcome();
     place_nums();
     print_grid();
 
