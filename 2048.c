@@ -41,10 +41,43 @@ void welcome(){
 
 }
 
+void process_cmd(c){
+    getchar();
+    switch(c){
+        case 'w':
+            printf("%s\n", "UP");
+            break;
+        
+        case 'a':
+            printf("%s\n", "LEFT");
+            break;
+        
+        case 's':
+            printf("%s\n", "DOWN");
+            break;
+        
+        case 'd':
+            printf("%s\n", "RIGHT");
+            break;
+        
+        case 'q':
+            printf("%s\n", "QUIT");
+            break;
+        
+    }
+}
+
 int main(){
     welcome();
     place_nums();
+    place_nums();
     print_grid();
+    char c;
+    while ((c = getchar()) != 'q'){
+        process_cmd(c);
+        place_nums();
+        print_grid();
+    }
 
     return EXIT_SUCCESS;
 }
