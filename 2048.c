@@ -13,7 +13,7 @@ void place_nums(){
     while (grid[i][j]){
         i = rand()%N;
         j = rand()%N;
-    }
+    } 
 
     if (rand()%2){
         grid[i][j] = 2;
